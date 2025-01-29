@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz1ICT</title>
+    <style>
+        
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Given that z = 15 and k = 3 calculate the following</h1>
+
+    <div class="section">
+        <h2>Arithmetic Operator</h2>
+        <button onclick="showExponent()">Reveal The Exponent</button>
+        <button onclick="showModulus()">Reveal The Modulus</button>
+    </div>
+
+    <div class="section">
+        <h2>Comparison Operator</h2>
+        <button onclick="showIsGreater()">Check if Z is Greater</button>
+        <button onclick="showIsEqual()">Check if Z Equals</button>
+    </div>
+
+    <div class="section">
+        <h2>Logical Operator</h2>
+        <button onclick="showLogicalAnd()">Check Logical AND</button>
+        <button onclick="showLogicalOr()">Check Logical OR</button>
+    </div>
+
+    <div class="result" id="result"></div>
+    
+    <script>
+        let z = 15;
+        let k = 3;
+
+        function showExponent() {
+            let result = Math.pow(z, k);
+            document.getElementById('result').innerText = `Exponent: ${result}`;
+        }
+
+        function showModulus() {
+            let result = z % k;
+            document.getElementById('result').innerText = `Modulus: ${result}`;
+        }
+
+        function showIsGreater() {
+            let result = z > k;
+            document.getElementById('result').innerText = `Is Z greater than K?: ${result}`;
+        }
+
+        function showIsEqual() {
+            let result = z === k;
+            document.getElementById('result').innerText = `Is Z equal to K?: ${result}`;
+        }
+
+        function showLogicalAnd() {
+            let result = (z <= k) && (z >= k);
+            document.getElementById('result').innerText = `Logical AND (Z <= K and Z >= K): ${result}`;
+        }
+
+        function showLogicalOr() {
+            let result = (z !== k) || (z === k);
+            document.getElementById('result').innerText = `Logical OR (Z != K or Z == K): ${result}`;
+        }
+    </script>
+</body>
+</html>
